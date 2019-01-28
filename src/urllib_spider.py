@@ -4,6 +4,8 @@ import urllib
 from urllib import request
 from urllib import error
 import chardet
+from bs4 import BeautifulSoup
+
 
 def proxy_http_connect():
     # 这是代理IP
@@ -54,16 +56,36 @@ def http_connect(http_address="http://www.baidu.com"):
         charset = chardet.detect(html)
         print("charset编码格式：%s" % (charset["encoding"]))
         print('**********************************************')
-        html = html.decode("gb18030")
-        print(html)
+        if charset["encoding"].find("2312") > 0:
+            html = html.decode("gb18030")
+        else:
+            html = html.decode(charset["encoding"])
+        return html
     except error.URLError as e:
         if type(e) == error.URLError:
             print("URL错误" + str(e))
         if type(e) == error.HTTPError:
             print("HTTP错误" + str(e))
+        return None
 
 
 # def cookie_login():
 
+def beautifulsoup_spider():
+    download_html = http_connect("http://www.biqukan.com/1_1094/5403177.html")
+    soup_texts = BeautifulSoup(download_html, 'lxml')
+    texts = soup_texts.find_all(id='content', class_='showtxt')
+    soup_text = BeautifulSoup(str(texts), 'lxml')
+    # 将\xa0无法解码的字符删除
+    print(soup_text.div.text)
+
+
 if __name__ == "__main__":
-    http_connect("https://www.163.com/")
+    # http_connect("https://www.163.com/")
+
+    #创建txt文件
+    file = open('', 'w', encoding='utf-8')
+    path = "/一念永恒.txt"
+    with open(path, 'a', encoding='utf-8', newline='') as f:
+        f.write()
+    beautifulsoup_spider()
