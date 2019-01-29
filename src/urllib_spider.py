@@ -1,6 +1,5 @@
 # coding :utf8
 
-import urllib
 from urllib import request
 from urllib import error
 import chardet
@@ -77,15 +76,23 @@ def beautifulsoup_spider():
     texts = soup_texts.find_all(id='content', class_='showtxt')
     soup_text = BeautifulSoup(str(texts), 'lxml')
     # 将\xa0无法解码的字符删除
-    print(soup_text.div.text)
+    return soup_text.div.text
 
 
-if __name__ == "__main__":
-    # http_connect("https://www.163.com/")
+# if __name__ == "__main__":
+#     # http_connect("https://www.163.com/")
+#
+#     # 创建txt文件
+#     path = "一念永恒.txt"
+#     with open(path, 'a', encoding='utf-8', newline='') as f:
+#         f.write(beautifulsoup_spider())
 
-    #创建txt文件
-    file = open('', 'w', encoding='utf-8')
-    path = "/一念永恒.txt"
-    with open(path, 'a', encoding='utf-8', newline='') as f:
-        f.write()
-    beautifulsoup_spider()
+if __name__ =="__main__":
+    download_html = http_connect("http://date.jobbole.com/")
+    soup_texts = BeautifulSoup(download_html, 'lxml')
+    for media in soup_texts.find_all(class_="media"):
+        try:
+            print(BeautifulSoup(str(media), 'lxml').html.body.li.a["data-post-id"])
+        except KeyError:
+            pass
+    # for line in soup_texts.
