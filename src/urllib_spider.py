@@ -1,9 +1,11 @@
 # coding :utf8
-
+import os
+import time
 from urllib import request
 from urllib import error
 import chardet
 from bs4 import BeautifulSoup
+from urllib.request import urlretrieve
 
 
 def proxy_http_connect():
@@ -86,13 +88,56 @@ def beautifulsoup_spider():
 #     path = "一念永恒.txt"
 #     with open(path, 'a', encoding='utf-8', newline='') as f:
 #         f.write(beautifulsoup_spider())
+def down_girl(path, girl_id):
+    try:
+        downloadHtml = http_connect("http://date.jobbole.com/" + girl_id + "/")
+        soupTexts = BeautifulSoup(downloadHtml, 'lxml')
+        textsFind = soupTexts.find(class_="p-entry")
+        textsTitle = soupTexts.find(class_="p-tit-single")
+        if str(textsTitle.text).find("脱单") > 0:
+            print("已脱单")
+            return None
+        filePath = path + "/" + str(textsTitle.text)
+        if str(textsTitle.text) not in os.listdir(path):
+            os.makedirs(filePath)
+        tagFind = BeautifulSoup(str(textsFind), 'lxml')
+        girlAttribute = str(tagFind.p).replace("\n", "").replace("<p>", "").replace("</p>", "").replace("<br/>", "\n")
+        with open(filePath + "/" + "信息卡.txt", 'w', encoding='utf-8', newline='') as f:
+            f.write(girlAttribute)
+        attributeList = girlAttribute.split("\n")
+        print(attributeList[0])
+        print(attributeList[3])
+        print(attributeList[4])
+        print(attributeList[7])
+        if str(attributeList[len(attributeList) - 2]).find("http") > 0:
+            urlretrieve(str(attributeList[len(attributeList) - 2])[
+                        attributeList[len(attributeList) - 2].index("http"):attributeList[len(attributeList) - 2].index(
+                            "jpg") + 3], filePath + "/" + "01.jpg")
+        if str(attributeList[len(attributeList) - 1]).find("http") > 0:
+            urlretrieve(str(attributeList[len(attributeList) - 1])[
+                        attributeList[len(attributeList) - 1].index("http"):attributeList[len(attributeList) - 1].index(
+                            "jpg") + 3], filePath + "/" + "02.jpg")
+    except Exception as e:
+        print("错误" + e)
+        pass
 
-if __name__ =="__main__":
+
+if __name__ == "__main__":
     download_html = http_connect("http://date.jobbole.com/")
     soup_texts = BeautifulSoup(download_html, 'lxml')
+    numberList = []
+    if "收集器" not in os.listdir("../"):
+        os.makedirs("../收集器")
+        pass
     for media in soup_texts.find_all(class_="media"):
         try:
-            print(BeautifulSoup(str(media), 'lxml').html.body.li.a["data-post-id"])
+            id_ = BeautifulSoup(str(media), 'lxml').html.body.li.a["data-post-id"]
+            numberList.append(id_)
+            print(id_)
         except KeyError:
             pass
+    for girl in numberList:
+        down_girl("../收集器", girl)
+        time.sleep(1)
+    # for target_id in numberList:
     # for line in soup_texts.
