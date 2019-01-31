@@ -4,6 +4,44 @@
     <list default="true" id="cc8ef8bb-84bb-4e54-b109-13598ba1ac7f" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/urllib_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/urllib_spider.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/【脱单啦】晚点遇见你，余生都是你/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/一屋两人，三餐四季/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/一屋两人，三餐四季/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/一屋两人，三餐四季/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/一起看春夏秋冬景，吃遍人间烟火味/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/一起看春夏秋冬景，吃遍人间烟火味/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/世上最好的缘，便是有个聊得来的伴/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/兜兜转转了很久，希望你恰好也在/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/只愿得一人心，白首不分离/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/只愿得一人心，白首不分离/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/只愿得一人心，白首不分离/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/岁月静好，懂得感恩，与你相随/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/岁月静好，懂得感恩，与你相随/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/岁月静好，懂得感恩，与你相随/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/待盼君来，从此与君同在/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/待盼君来，从此与君同在/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/待盼君来，从此与君同在/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/择一人深爱，等一人终老/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/择一人深爱，等一人终老/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/择一人深爱，等一人终老/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/有趣的灵魂一起，共度三餐四季，共赏世间风景/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/有趣的灵魂一起，共度三餐四季，共赏世间风景/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/有趣的灵魂一起，共度三餐四季，共赏世间风景/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/积极纯善的女生，期待正直有为的你/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/积极纯善的女生，期待正直有为的你/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/积极纯善的女生，期待正直有为的你/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/简简单单，开心就好/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/简简单单，开心就好/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/简简单单，开心就好/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/赖床运动员，吉尼斯吃不饱记录保持者/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/赖床运动员，吉尼斯吃不饱记录保持者/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/赖床运动员，吉尼斯吃不饱记录保持者/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/还没有发生的美好，一定正在路上/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/还没有发生的美好，一定正在路上/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/还没有发生的美好，一定正在路上/信息卡.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/需要个杭州的小哥哥惦念着/01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/需要个杭州的小哥哥惦念着/02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/收集器/需要个杭州的小哥哥惦念着/信息卡.txt" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,7 +53,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/ZeroSpider$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1524798495651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/ZeroSpider$urllib_spider__1_.coverage" NAME="urllib_spider (1) Coverage Results" MODIFIED="1548864784840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/ZeroSpider$urllib_spider__1_.coverage" NAME="urllib_spider (1) Coverage Results" MODIFIED="1548949660910" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/ZeroSpider$urllib_spider.coverage" NAME="urllib_spider Coverage Results" MODIFIED="1548225257987" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/ZeroSpider$spider.coverage" NAME="spider Coverage Results" MODIFIED="1548224937397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
@@ -24,20 +62,11 @@
       <file leaf-file-name="urllib_spider.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/urllib_spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-25">
-              <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
+            <state relative-caret-position="203">
+              <caret line="119" column="30" lean-forward="true" selection-start-line="119" selection-start-column="30" selection-end-line="119" selection-end-column="30" />
               <folding>
                 <element signature="e#15#24#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="request.py" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/urllib/request.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="228" column="4" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -57,6 +86,8 @@
       <find>file</find>
       <find>write_csv_file</find>
       <find>KeyError</find>
+      <find>5475</find>
+      <find>4233</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -96,9 +127,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -106,15 +134,13 @@
               <item name="ZeroSpider" type="b2602c69:ProjectViewProjectNode" />
               <item name="ZeroSpider" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ZeroSpider" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ZeroSpider" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -122,7 +148,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.42889562" />
     <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
@@ -326,11 +352,12 @@
       <workItem from="1548678181501" duration="2567000" />
       <workItem from="1548774369003" duration="3741000" />
       <workItem from="1548813388299" duration="14875000" />
+      <workItem from="1548918339368" duration="6962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48402000" />
+    <option name="totallyTimeSpent" value="55364000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -345,15 +372,16 @@
       <window_info anchor="right" id="Maven Projects" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49573562" weight="0.46673936" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49573562" visible="true" weight="0.30752453" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14872068" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15031983" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Concurrent Activities Diagram" weight="0.3293348" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -379,20 +407,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+        <line-breakpoint suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/src/urllib_spider.py</url>
-          <line>108</line>
+          <line>113</line>
           <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/urllib_spider.py</url>
-          <line>125</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/src/urllib_spider.py</url>
-          <line>139</line>
-          <option name="timeStamp" value="21" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -402,7 +420,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="22" />
+      <option name="time" value="28" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -507,6 +525,23 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/urllib_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2254">
+          <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
+          <folding>
+            <element signature="e#15#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/urllib/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5244">
+          <caret line="228" column="4" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/urllib_spider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2208">
@@ -654,13 +689,6 @@
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/urllib/error.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$USER_HOME$/.IntelliJIdea2018.1/system/python_stubs/-452498548/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="3566" column="6" selection-start-line="3566" selection-start-column="6" selection-end-line="3566" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/os.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-377">
@@ -670,15 +698,28 @@
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/urllib/request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="5244">
           <caret line="228" column="4" selection-start-line="228" selection-start-column="4" selection-end-line="228" selection-end-column="4" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/.IntelliJIdea2018.1/system/python_stubs/-452498548/builtins.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="896" column="6" selection-start-line="896" selection-start-column="6" selection-end-line="896" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/收集器/一个外表大咧开朗，骨子里传统有原则的女生/02.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/收集器/一个外表大咧开朗，骨子里传统有原则的女生/01.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/urllib_spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-25">
-          <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
+        <state relative-caret-position="203">
+          <caret line="119" column="30" lean-forward="true" selection-start-line="119" selection-start-column="30" selection-end-line="119" selection-end-column="30" />
           <folding>
             <element signature="e#15#24#0" expanded="true" />
           </folding>

@@ -96,7 +96,7 @@ def down_girl(path, girl_id):
         textsTitle = soupTexts.find(class_="p-tit-single")
         if str(textsTitle.text).find("脱单") > 0:
             print("已脱单")
-            return None
+            return False
         filePath = path + "/" + str(textsTitle.text)
         if str(textsTitle.text) not in os.listdir(path):
             os.makedirs(filePath)
@@ -105,39 +105,59 @@ def down_girl(path, girl_id):
         with open(filePath + "/" + "信息卡.txt", 'w', encoding='utf-8', newline='') as f:
             f.write(girlAttribute)
         attributeList = girlAttribute.split("\n")
+        if len(attributeList) < 4 or str(attributeList[0]).find("出生年月") < 0:
+            print("已脱单")
+            return False
+        print("NO:" + girl_id)
+        print("**********************************************")
         print(attributeList[0])
         print(attributeList[3])
         print(attributeList[4])
         print(attributeList[7])
-        if str(attributeList[len(attributeList) - 2]).find("http") > 0:
-            urlretrieve(str(attributeList[len(attributeList) - 2])[
-                        attributeList[len(attributeList) - 2].index("http"):attributeList[len(attributeList) - 2].index(
-                            "jpg") + 3], filePath + "/" + "01.jpg")
-        if str(attributeList[len(attributeList) - 1]).find("http") > 0:
-            urlretrieve(str(attributeList[len(attributeList) - 1])[
-                        attributeList[len(attributeList) - 1].index("http"):attributeList[len(attributeList) - 1].index(
-                            "jpg") + 3], filePath + "/" + "02.jpg")
-    except Exception as e:
-        print("错误" + e)
-        pass
+        if str(attributeList[-2]).find("http") > 0:
+            urlretrieve(str(attributeList[-2])[
+                        attributeList[-2].index("http"):attributeList[-2].index("jpg") + 3], filePath + "/" + "01.jpg")
+        if str(attributeList[-1]).find("http") > 0:
+            urlretrieve(str(attributeList[-1])[
+                        attributeList[-1].index("http"):attributeList[-1].index("jpg") + 3], filePath + "/" + "02.jpg")
+        return True
+    except Exception:
+        print("错误")
+        return False
 
 
 if __name__ == "__main__":
-    download_html = http_connect("http://date.jobbole.com/")
-    soup_texts = BeautifulSoup(download_html, 'lxml')
-    numberList = []
     if "收集器" not in os.listdir("../"):
         os.makedirs("../收集器")
         pass
-    for media in soup_texts.find_all(class_="media"):
-        try:
-            id_ = BeautifulSoup(str(media), 'lxml').html.body.li.a["data-post-id"]
-            numberList.append(id_)
-            print(id_)
-        except KeyError:
-            pass
-    for girl in numberList:
-        down_girl("../收集器", girl)
-        time.sleep(1)
-    # for target_id in numberList:
-    # for line in soup_texts.
+    page = 1
+    isNext = True
+    retryList = []
+    while isNext:
+        isHttp =False
+        while not isHttp:
+            try:
+                download_html = http_connect("http://date.jobbole.com/page/" + str(page))
+                soup_texts = BeautifulSoup(download_html, 'lxml')
+                isHttp = True
+            except Exception:
+                time.sleep(2)
+        # download_html = http_connect("http://date.jobbole.com/page/" + str(page))
+        # soup_texts = BeautifulSoup(download_html, 'lxml')
+        numberList = []
+        if len(soup_texts.find_all(class_="media")) > 0:
+            page += 1
+            for media in soup_texts.find_all(class_="media"):
+                try:
+                    id_ = BeautifulSoup(str(media), 'lxml').html.body.li.a["data-post-id"]
+                    numberList.append(id_)
+                    print(id_)
+                except KeyError:
+                    pass
+            for girl in numberList:
+                if not down_girl("../收集器", girl):
+                    retryList.append(girl)
+                time.sleep(2)
+
+        else:
+            isNext = False
