@@ -81,69 +81,95 @@ def beautifulsoup_spider():
     return soup_text.div.text
 
 
-# if __name__ == "__main__":
-#     # http_connect("https://www.163.com/")
-#
-#     # 创建txt文件
-#     path = "一念永恒.txt"
-#     with open(path, 'a', encoding='utf-8', newline='') as f:
-#         f.write(beautifulsoup_spider())
 def down_girl(path, girl_id):
     try:
+        print("NO:" + girl_id)
         downloadHtml = http_connect("http://date.jobbole.com/" + girl_id + "/")
         soupTexts = BeautifulSoup(downloadHtml, 'lxml')
         textsFind = soupTexts.find(class_="p-entry")
         textsTitle = soupTexts.find(class_="p-tit-single")
-        if str(textsTitle.text).find("脱单") > 0:
+        print("标题:" + textsTitle.text)
+        if str(textsTitle.text).count("脱单") > 0 or str(textsTitle.text).count("【") > 0:
             print("已脱单")
             return False
         filePath = path + "/" + str(textsTitle.text)
         if str(textsTitle.text) not in os.listdir(path):
             os.makedirs(filePath)
+        else:
+            print("已存在")
+            return True
         tagFind = BeautifulSoup(str(textsFind), 'lxml')
         girlAttribute = str(tagFind.p).replace("\n", "").replace("<p>", "").replace("</p>", "").replace("<br/>", "\n")
-        with open(filePath + "/" + "信息卡.txt", 'w', encoding='utf-8', newline='') as f:
-            f.write(girlAttribute)
         attributeList = girlAttribute.split("\n")
         if len(attributeList) < 4 or str(attributeList[0]).find("出生年月") < 0:
             print("已脱单")
             return False
-        print("NO:" + girl_id)
+        with open(filePath + "/" + "信息卡.txt", 'w', encoding='utf-8', newline='') as f:
+            f.write(girlAttribute)
+        img_list = textsFind.find_all("img")
+        for imgs in img_list:
+            imgs_str = str(imgs)
+            urlretrieve(imgs_str[imgs_str.index("http"):imgs_str.index("jpg") + 3])
         print("**********************************************")
         print(attributeList[0])
         print(attributeList[3])
         print(attributeList[4])
         print(attributeList[7])
-        if str(attributeList[-2]).find("http") > 0:
-            urlretrieve(str(attributeList[-2])[
-                        attributeList[-2].index("http"):attributeList[-2].index("jpg") + 3], filePath + "/" + "01.jpg")
-        if str(attributeList[-1]).find("http") > 0:
-            urlretrieve(str(attributeList[-1])[
-                        attributeList[-1].index("http"):attributeList[-1].index("jpg") + 3], filePath + "/" + "02.jpg")
+
+        # if str(attributeList[-2]).find("http") > 0:
+        #     urlretrieve(str(attributeList[-2])[
+        #                 attributeList[-2].index("http"):attributeList[-2].index("jpg") + 3], filePath + "/" + "01.jpg")
+        # if str(attributeList[-1]).find("http") > 0:
+        #     urlretrieve(str(attributeList[-1])[
+        #                 attributeList[-1].index("http"):attributeList[-1].index("jpg") + 3], filePath + "/" + "02.jpg")
         return True
     except Exception:
         print("错误")
         return False
 
 
+class RetryModel:
+    def __init__(self, retry_count, retry_time, retry_id):
+        self.count = retry_count
+        self.time = retry_time
+        self.id = retry_id
+
+    def update(self, retry_time):
+        self.count += 1
+        self.time = retry_time
+
+    def should_retry(self):
+        if self.count < 3:
+            return True
+        else:
+            return False
+
+    def get_count(self):
+        return self.count
+
+    def get_id(self):
+        return self.id
+
+
 if __name__ == "__main__":
-    if "收集器" not in os.listdir("../"):
-        os.makedirs("../收集器")
+    if "收集器" not in os.listdir("D:/IDEA_Project"):
+        os.makedirs("D:/IDEA_Project/收集器")
         pass
     page = 1
     isNext = True
     retryList = []
     while isNext:
-        isHttp =False
+        isHttp = False
         while not isHttp:
+            # 只要失败就重试
             try:
                 download_html = http_connect("http://date.jobbole.com/page/" + str(page))
                 soup_texts = BeautifulSoup(download_html, 'lxml')
                 isHttp = True
-            except Exception:
+            except:
+                print("获取列表失败，重试")
                 time.sleep(2)
-        # download_html = http_connect("http://date.jobbole.com/page/" + str(page))
-        # soup_texts = BeautifulSoup(download_html, 'lxml')
+        print("页数：" + str(page))
         numberList = []
         if len(soup_texts.find_all(class_="media")) > 0:
             page += 1
@@ -155,9 +181,17 @@ if __name__ == "__main__":
                 except KeyError:
                     pass
             for girl in numberList:
-                if not down_girl("../收集器", girl):
-                    retryList.append(girl)
+                if not down_girl("D:/IDEA_Project/收集器", girl):
+                    retryList.append(RetryModel(1, time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()), girl))
                 time.sleep(2)
 
         else:
-            isNext = False
+            if len(retryList) > 0:
+                for retryModel in retryList:
+                    while retryModel.should_retry():
+                        if not down_girl("D:/IDEA_Project/收集器", retryModel.get_id()):
+                            retryModel.update(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+                        time.sleep(2)
+                isNext = False
+            else:
+                isNext = False
