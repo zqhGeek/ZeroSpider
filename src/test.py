@@ -10,3 +10,13 @@ class Student(object):
 
 bart = Student("Zero", 32)
 print(bart)
+
+if __name__ == "__main__":
+    jump = True
+    number = 1
+    while jump:
+        if number < 4:
+            number += 1
+        else:
+            pass
+    print("结束")

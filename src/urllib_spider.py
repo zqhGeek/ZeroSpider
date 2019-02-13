@@ -6,6 +6,7 @@ from urllib import error
 import chardet
 from bs4 import BeautifulSoup
 from urllib.request import urlretrieve
+import openpyxl
 
 
 def proxy_http_connect():
@@ -81,6 +82,25 @@ def beautifulsoup_spider():
     return soup_text.div.text
 
 
+def save_to_excel(age, school, job_address, home_address, money, job, marry_time):
+    if "统计表格.xlsx" not in os.listdir("D:/IDEA_Project/收集器"):
+        wb = openpyxl.Workbook()
+        sheet = wb.active
+        sheet.title = "信息表"
+        # sheet = wb.create_sheet(u"信息表")
+        TITLE = ['出生年月', '学历', '就职地', '户籍地', '年薪', '职业', '计划结婚']
+        DATA = [age, school, job_address, home_address, money, job, marry_time]
+        sheet.append(TITLE)
+        sheet.append(DATA)
+        wb.save("D:/IDEA_Project/收集器/统计表格.xlsx")
+    else:
+        wb = openpyxl.load_workbook("D:/IDEA_Project/收集器/统计表格.xlsx")
+        sheet = wb.get_sheet_by_name('信息表')
+        DATA = [age, school, job_address, home_address, money, job, marry_time]
+        sheet.append(DATA)
+        wb.save("D:/IDEA_Project/收集器/统计表格.xlsx")
+
+
 def down_girl(path, girl_id):
     try:
         print("NO:" + girl_id)
@@ -107,15 +127,18 @@ def down_girl(path, girl_id):
         with open(filePath + "/" + "信息卡.txt", 'w', encoding='utf-8', newline='') as f:
             f.write(girlAttribute)
         img_list = textsFind.find_all("img")
+        i = 1
         for imgs in img_list:
             imgs_str = str(imgs)
-            urlretrieve(imgs_str[imgs_str.index("http"):imgs_str.index("jpg") + 3])
+            urlretrieve(imgs_str[imgs_str.index("http"):imgs_str.index("jpg") + 3], filePath + "/" + str(i) + ".jpg")
+            i += 1
         print("**********************************************")
         print(attributeList[0])
         print(attributeList[3])
         print(attributeList[4])
         print(attributeList[7])
-
+        save_to_excel(attributeList[0][5:], attributeList[3][3:], attributeList[4][5:], attributeList[5][3:], attributeList[8][5:],
+                      attributeList[7][3:], attributeList[11][8:])
         # if str(attributeList[-2]).find("http") > 0:
         #     urlretrieve(str(attributeList[-2])[
         #                 attributeList[-2].index("http"):attributeList[-2].index("jpg") + 3], filePath + "/" + "01.jpg")
@@ -191,6 +214,8 @@ if __name__ == "__main__":
                     while retryModel.should_retry():
                         if not down_girl("D:/IDEA_Project/收集器", retryModel.get_id()):
                             retryModel.update(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+                        else:
+                            break
                         time.sleep(2)
                 isNext = False
             else:
