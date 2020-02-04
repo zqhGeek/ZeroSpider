@@ -13,6 +13,9 @@ def http_connect(http_address="http://www.baidu.com"):
         response = requests.get(http_address, headers=headers)
         response.raise_for_status()  # 当返回code不是200的时候会触发异常
         response.encoding = response.apparent_encoding
+        response.encoding = 'utf-8'
+        print("==========================")
+        print('网络请求:'+response.url)
         return response.text
     except Exception as e:
         print(e)
